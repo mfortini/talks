@@ -1,0 +1,9 @@
+name: jupyter
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
+  - geopandas
+  - rise
