@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                <title>Hacking civico: diventare cittadini attivi anche attraverso i dati aperti</title>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/reveal.css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/theme/moon.css">
+                <!-- Theme used for syntax highlighting of code -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/lib/css/zenburn.css">
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+        background-color: rgba(0,0,0,0.6);
+}
+
+</style>
+        </head>
+        <body>
+                <div class="reveal">
+                        <div class="slides">
+                                <section>
+                                        <h2>Hacking civico: diventare cittadini attivi anche attraverso i dati aperti</h2>
+                                        Matteo Fortini - Cento, 2019-03-07
+
+                                        <div style="height:300px; width:100%; clear:both;"></div>
+                                        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><small>Quest'opera è distribuita con Licenza <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribuzione 4.0 Internazionale</small></a>.
+                                        <aside class="notes">
+                                                Introduzione all'hacking. Cosa significa hacking, chi è l'hacker, da dove viene, quali sono i filoni di hacking, alcune citazioni.
+                                        </aside>
+                                </section>
+                                <section data-background-image="img/samuel-zeller-336980-unsplash.jpg" data-background-opacity=0.3>
+                                        <h1>Hacker</h1>
+                                        <div style="height:400px; width:100%; clear:both;"></div>
+
+                                        <div>
+                                                <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@samuelzeller?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Samuel Zeller"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Samuel Zeller</span></a>
+                                        </div>
+                                        <aside class="notes">
+                                                Immagine tipica di un "hacker", che viene visto come quello che fa cose anche illegali per entrare nei computer.
+                                        </aside>
+                                </section>
+                                <section data-background-image="img/markus-spiske-155598-unsplash.jpg">
+                                        <img src="img/hack.jpg" width="80%" />
+                                        <div style="height:200px; width:100%; clear:both;"></div>
+                                                <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@markusspiske?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Markus Spiske"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Markus Spiske</span></a>
+                                        <aside class="notes">
+                                                Definizione di to hack in Inglese.
+                                        </aside>
+                                </section>
+                                <section data-background-image="img/thereifixedit.jpg">
+                                        <h1>Hack</h1>
+                                        <aside class="notes">
+                                                Quello che in Inglese chiamano un "hack"
+                                        </aside>
+                                </section>
+                                <section>
+                                        <section data-background-image="img/jugaad1.jpg" data-background-opacity=1>
+                                                <h2>Jugaad</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                        Frugal innovation
+                                                </div>
+                                                <aside class="notes">
+                                                        Ha anche un nome "ufficiale", si chiama Jugaad
+                                                        Foto di esempi di jugaad
+                                                </aside>
+                                        </section>
+                                        <section data-background-image="img/jugaad2.jpg" data-background-opacity=1>
+                                                <h2>Jugaad</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                        Frugal innovation
+                                                </div>
+                                                <aside class="notes">
+                                                        Ha anche un nome "ufficiale", si chiama Jugaad
+                                                        Foto di esempi di jugaad
+                                                </aside>
+                                        </section>
+                                </section>
+                                <section>
+                                        <section>
+                                                <h2>Hacking</h2>
+                                                <p align="left">Princìpi:</p>
+                                                <ul>
+                                                        <li>Applicarsi a problemi concreti</li>
+                                                        <li>Con metodi anche non convenzionali</li>
+                                                        <li>Do-ocracy. L'autorità la si guadagna sul campo</li>
+                                                        <li>Senza pregiudizi "it's ok to call bullshit on anything"</li>
+                                                        <li>Apertura e condivisione</li>
+                                                </ul>
+                                                L'hacking è un <strong>mezzo</strong> che, come tutti, può avere fini buoni o cattivi, legali o illegali.
+
+                                                <aside class="notes">
+                                                </aside>
+                                        </section>
+                                        <section data-background-image="img/fancycrave-252356-unsplash.jpg">
+                                                <h2>Applicarsi a problemi concreti</h2>
+
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                <ul>
+                                                        <li>Non si fanno esercizi di stile</li>
+                                                        <li>"Scegli il tuo supercattivo e trova il modo di distruggerlo"</li>
+                                                        <li>Si diventa civic hacker anche per disperazione</li>
+                                                </ul>
+                                                </div>
+                                        <div style="height:200px; width:100%; clear:both;"></div>
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@fancycrave?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Fancycrave"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Fancycrave</span></a>
+                                        </section>
+                                        <section data-background-image="img/roseanna-smith-708831-unsplash.jpg" data-background-opacity=0.5>
+                                                <h2>Metodi anche non convenzionali</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                <ul>
+                                                        <li>Creatività: non solo competenze tecniche</li>
+                                                        <li><i>Insanity is doing the same thing over and over again and expecting different results.</i> (no, non è Einstein)</li>
+                                                </ul>
+                                                </div>
+                                                <div style="height:200px; width:100%; clear:both;"></div>
+                                                <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@roseannasmith?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Roseanna Smith"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Roseanna Smith</span></a>
+                                        </section>
+                                        <section data-background-image="img/austin-chan-275638-unsplash.jpg" data-background-opacity=0.5>
+                                                <h2>Do-ocracy</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                        <ul>
+                                                                <li>L'autorità la si guadagna sul campo.</li>
+                                                                <li>Chi ha tempo/volontà, fa</li>
+                                                        </ul>
+                                                </div>
+
+                                        <div style="height:200px; width:100%; clear:both;"></div>
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@austinchan?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Austin Chan"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Austin Chan</span></a>
+                                        </section>
+                                        <section data-background-image="img/ipse-dixit-L.jpg" data-background-opacity=0.5>
+                                                <h2>Senza pregiudizi</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                        <ul>
+                                                                <li>Non esiste un "ipse-dixit"</li>
+                                                                <li>Metodo scientifico</li>
+                                                                <li>It's ok to call bullshit on anything</li>
+                                                        </ul>
+                                                </div>
+                                        </section>
+                                        <section data-background-image="img/rocking_bathtub_850.jpg" data-background-opacity=0.5>
+                                                <h2>Apertura e condivisione</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                <ul>
+                                                        <li>Copyright e copyleft</li>
+                                                        <li>L'ufficio brevetti</li>
+                                                        <li>Le licenze "virali"</li>
+                                                </ul>
+                                                </div>
+                                        </section>
+                                </section>
+
+                                <section>
+                                        <section>
+                                                <h2>Obiettivi</h2>
+                                                <ul>
+                                                        <li>Risolvere un problema</li>
+                                                        <li>Evidenziare un problema</li>
+                                                        <li>Abilitare</li>
+                                                </ul>
+                                        </section>
+                                        <section data-background-image="img/openbutton.jpg" data-background-opacity=0.5>
+                                                <h2>Abilitanti</h2>
+                                                <div style="background-color: rgba(0,0,0,0.6)">
+                                                        <ul>
+                                                                <li>Open data</li>
+                                                                <li>Open source</li>
+                                                        </ul>
+                                                </div>
+                                        </section>
+                                </section>
+                                <section>
+                                        <h2>Hacking civico</h2>
+                                        Applicare principi e metodi dell'hacking alla società civile
+                                        <aside class="notes">
+                                                Quando vengono applicati i metodi e i principi dell'hacking alla società e alla vita civile.
+                                        </aside>
+                                </section>
+                                <section>
+                                <section data-background-image="img/santarifiuti.jpg" data-background-opacity=1>
+                                        <h2>Risolvere un problema</h2>
+                                </section>
+                                <section data-background-image="img/guerrillagardening.jpg" data-background-opacity=0.9>
+                                        <h2>Risolvere un problema</h2>
+                                </section>
+                                </section>
+                                <section>
+                                <section data-background-image="img/pothole.jpg" data-background-opacity=0.9>
+                                        <h2>Evidenziare un problema</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Le buche stradali</p>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/unamappaperamica.jpg" data-background-opacity=0.9>
+                                        <h2>Evidenziare un problema</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Una mappa per amica</p>
+
+                                                <a href="https://dariaq.wixsite.com/unamappaperamica/" target="blank">https://dariaq.wixsite.com/unamappaperamica/</a>
+                                        </div>
+                                </section>
+                                </section>
+                                <section>
+                                <section data-background-image="img/Tyndale_Bible_-_Gospel_of_John.jpg" data-background-opacity=0.5>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>The beginning of the Gospel of John from a copy of the 1526 edition of William Tyndale's New Testament at the British Library</p>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/foiapop.jpg" data-background-opacity=0.5>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Come fare le cose</p>
+
+                                                <a href="http://www.foiapop.it" target="blank">www.foiapop.it</a>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/confiscatibene.jpg" data-background-opacity=0.9>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Rendere fruibili le informazioni</p>
+
+                                                <a href="www.confiscatibene.it" target="blank">http://www.confiscatibene.it</a>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/siticontaminati.jpg" data-background-opacity=0.9>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Rendere fruibili le informazioni</p>
+
+                                                <a href="https://umap.openstreetmap.fr/it/map/siti-contaminati-della-regione-emilia-romagna-rapp_46431" target="blank">https://umap.openstreetmap.fr/it/map/siti-contaminati-della-regione-emilia-romagna-rapp_46431</a>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/visualcad.jpg" data-background-opacity=0.9>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Rendere fruibili le informazioni</p>
+
+                                                <a href="http://www.visualcad.it/" target="blank">www.visualcad.it/</a>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/slotferrara.jpg" data-background-opacity=0.9>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>Rendere fruibili le informazioni</p>
+
+                                                <a href="https://lab.gedidigital.it/finegil/2017/italia-delle-slot/" target="blank">lab.gedidigital.it/finegil/2017/italia-delle-slot/</a>
+                                        </div>
+                                </section>
+                                
+                                <section data-background-image="img/AlboPOP.jpg" data-background-opacity=0.5>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>AlboPOP</p>
+
+                                                <a href="https://www.albopop.it" target="blank">https://www.albopop.it</a>
+                                        </div>
+                                </section>
+                                <section data-background-image="img/TCI.jpg" data-background-opacity=0.5>
+                                        <h2>Abilitare</h2>
+                                        <div style="background-color: rgba(0,0,0,0.6)">
+                                                <p>AgOpenDi: TerremotoCentroItalia</p>
+
+                                                <a href="https://www.terremotocentroitalia.info" target="blank">https://www.terremotocentroitalia.info</a>
+                                        </div>
+                                </section>
+                                </section>
+                                <section>
+                                        <h2>Essere <i>buoni</i> civic hacker</h2>
+                                        <ul>
+                                                <li>Studiare: imparare regole, linguaggi</li>
+                                                <li>Informarsi</li>
+                                                <li>Raccontare e condividere</li>
+                                                <li>Collaborare</li>
+                                                <li>Dialogare (anche con le istituzioni)</li>
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h1>Dati e <i>open-data</i></h1>
+
+                                        <ul>
+                                                <li>Without data, you're just another person with an opinion (W. Edwards Deming)</li>
+                                                <li>Without an opinion, you're just another person with data (Forbes)</li>
+                                                <li>Everyone is entitled to his own opinion, but not to his own facts. (Daniel Patrick Moynihan)</li>
+                                                <li>There are three kinds of lies: lies, damned lies, and statistics</li>
+                                                <li>Non tutto quello che si trova su internet è vero (Cartesio)</li>
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h2>Perché i dati?</h2>
+                                        <div>
+                                                <span><img src="img/internet-minute-2017.jpg" width="45%" /></span> <span><img src="img/internet-minute-2018.jpg" width="45%" /></span>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Siamo produttori di dati</h3>
+
+                                        <div>
+                                        <a href="https://myactivity.google.com" target="blank">myactivity.google.com</a>
+                                        </div>
+
+                                        <img width="500px" src="img/googleMyAudio.jpg"></img>
+                                </section>
+                                <section>
+                                        <h3>Intelligenza Artificiale</h3>
+                                        <img width="400px" src="img/AI.jpg"></img>
+                                </section>
+                                <section>
+                                        <h3><strong>Open</strong> Data</h3>
+                                        <p>Dati + <strong>Licenza d'uso</strong></p>
+                                        <ul>
+                                                <li>CC-By</li>
+                                                <li>CC-By-SA</li>
+                                                <li><strike>CC-By-NC-...</strike></li>
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h2>Per saperne di più</h2>
+
+                                        <a href="https://civichacking.it/">civichacking.it</a>
+                                </section>
+                        </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/lib/js/head.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/js/reveal.js"></script>
+                <script>
+                        // More info about config & dependencies:
+                        // - https://github.com/hakimel/reveal.js#configuration
+                        // - https://github.com/hakimel/reveal.js#dependencies
+                        Reveal.initialize({
+                                history: true,
+                                center: false,
+                                math: {
+                                        mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                                        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                                },
+                                dependencies: [
+                                        { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/math/math.js', async: true },
+                                        { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/marked.js' },
+                                        { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/markdown.js' },
+                                        { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/notes/notes.js', async: true },
+                                        { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                                ]
+                        });
+                </script>
+        </body>
+</html>
