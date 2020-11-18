@@ -36,7 +36,7 @@ munch==2.3.1
 nbconvert==5.3.1
 nbformat==4.4.0
 networkx==2.1
-notebook==5.4.1
+notebook==6.1.5
 numpy==1.14.3
 osmnx==0.7.4
 overpy==0.4
